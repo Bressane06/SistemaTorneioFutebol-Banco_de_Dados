@@ -78,4 +78,63 @@ CALL CadastrarJogador(
 
 --==================================--
 
--- 2) 
+-- 2) Transferir jogador entre times
+CREATE OR REPLACE PROCEDURE TransferirJogador(
+    p_id_jogador INTEGER,
+    p_id_time_origem INTEGER,
+    p_id_time_destino INTEGER,
+    p_numeroCamisa INTEGER
+)
+AS $$
+DECLARE
+    v_vinculo_existente INTEGER;
+BEGIN
+    -- Verifica se o jogador tem um vínculo ativo no time de origem
+    SELECT COUNT(*) INTO v_vinculo_existente
+    FROM Elenco
+    WHERE id_time = p_id_time_origem
+      AND id_jogador = p_id_jogador
+      AND dataFim IS NULL;
+
+    IF v_vinculo_existente > 0 THEN
+        -- Encerra o vínculo anterior
+        UPDATE Elenco
+        SET dataFim = CURRENT_DATE
+        WHERE id_time = p_id_time_origem
+          AND id_jogador = p_id_jogador
+          AND dataFim IS NULL;
+
+        RAISE NOTICE 'Jogador % transferido do time % para o time %.', p_id_jogador, p_id_time_origem, p_id_time_destino;
+    ELSE
+        RAISE NOTICE 'Jogador % não possuía vínculo anterior. Cadastrando primeiro time.', p_id_jogador;
+    END IF;
+
+    -- Cria novo vínculo
+    INSERT INTO Elenco (id_time, id_jogador, numeroCamisa, dataInicio)
+    VALUES (p_id_time_destino, p_id_jogador, p_numeroCamisa, CURRENT_DATE);
+
+END;
+$$ LANGUAGE plpgsql;
+
+-- Exemplo de chamada da procedure
+CALL TransferirJogador(120,null, 1, 23);  
+
+-- 3) Finalizar partida (sempre que executado, atualiza a classificação via trigger)
+CREATE OR REPLACE PROCEDURE FinalizarPartida(
+    p_id_partida INT,
+    p_gols_casa INT,
+    p_gols_fora INT
+)
+AS $$
+BEGIN
+    UPDATE Partida
+    SET golsCasa = p_gols_casa,
+        golsFora = p_gols_fora,
+        status = 'Encerrada'
+    WHERE id_partida = p_id_partida;
+
+    RAISE NOTICE ' Partida % finalizada: % x %', p_id_partida, p_gols_casa, p_gols_fora;
+END;
+$$ LANGUAGE plpgsql;
+
+CALL FinalizarPartida(25, 20, 1);  -- Exemplo de chamada da procedure
