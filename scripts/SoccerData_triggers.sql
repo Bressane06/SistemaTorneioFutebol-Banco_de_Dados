@@ -108,7 +108,7 @@ EXECUTE FUNCTION ImpedirDuploVinculo();
 
 --==================================
 
--- 3) Validar evento de partida somente se a partida estiver em andamento
+-- 3) Validar evento de partida somente se a partida estiver em andamento ou encerrada
 CREATE OR REPLACE FUNCTION ValidarEventoPartida()
 RETURNS TRIGGER AS $$
 DECLARE
@@ -116,7 +116,7 @@ DECLARE
 BEGIN
     SELECT status INTO v_status FROM Partida WHERE id_partida = NEW.id_partida;
 
-    IF v_status <> 'Em andamento' THEN
+    IF v_status = 'Agendada' THEN
         RAISE EXCEPTION 'Não é possível registrar eventos antes da partida começar (status atual: %)', v_status;
     END IF;
 
