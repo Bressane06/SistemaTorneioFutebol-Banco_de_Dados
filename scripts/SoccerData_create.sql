@@ -5,6 +5,7 @@ CREATE TABLE Pessoa (
     nomeMeio VARCHAR(50),
     ultimoNome VARCHAR(50) NOT NULL,
     dataNasc DATE NOT NULL,
+    documentoIdentidade VARCHAR(20) UNIQUE,
     nacionalidade VARCHAR(50) NOT NULL,
     sexo CHAR(1) NOT NULL CHECK (sexo IN ('M', 'F'))
 );
@@ -192,4 +193,13 @@ CREATE TABLE Classificacao (
     pontos INTEGER NOT NULL CHECK (pontos >= 0) DEFAULT 0,
     FOREIGN KEY (id_torneio) REFERENCES Torneio(id_torneio),
     FOREIGN KEY (id_time) REFERENCES Time(id_time)
+);
+
+CREATE TABLE Escalacao_time (
+    id_partida INTEGER NOT NULL,
+    id_jogador INTEGER NOT NULL,
+    titular BOOLEAN NOT NULL,
+    PRIMARY KEY (id_partida, id_jogador),
+    FOREIGN KEY (id_partida) REFERENCES Partida(id_partida) ON DELETE CASCADE,
+    FOREIGN KEY (id_jogador) REFERENCES Jogador(id_pessoa)
 );

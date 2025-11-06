@@ -1,130 +1,130 @@
 -- 1; povoar a tabela Pessoa
 -- Inserção manual de 30 pessoas. Observação: id_pessoa é GENERATED ALWAYS AS IDENTITY; aqui inserimos apenas os campos NOT NULL.
-INSERT INTO Pessoa (primeiroNome, nomeMeio, ultimoNome, dataNasc, nacionalidade, sexo) VALUES
+INSERT INTO Pessoa (primeiroNome, nomeMeio, ultimoNome, dataNasc, nacionalidade, sexo, documentoIdentidade) VALUES
 -- Jogadores 1..30 (todos brasileiros)
-('Neymar','Junior','Santos','1992-02-05','Brasil','M'),
-('Philippe','Coutinho','Correia','1992-06-12','Brasil','M'),
-('Vinicius','Junior','Santos','2000-07-12','Brasil','M'),
-('Casemiro','Gabriel','Silva','1992-02-23','Brasil','M'),
-('Gabriel','Jesus','Nascimento','1997-04-03','Brasil','M'),
-('Rodrygo','Goes','Silva','2001-01-09','Brasil','M'),
-('Arthur','Melo','Nascimento','1996-08-12','Brasil','M'),
-('Raphinha','de Oliveira','Nascimento','1996-12-14','Brasil','M'),
-('Alex','Sandro','Lima','1991-01-26','Brasil','M'),
-('Thiago','Alcantara','do Nascimento','1991-04-11','Brasil','M'),
-('Fred','Rodrigues','Silva','1993-03-05','Brasil','M'),
-('Gabriel','Barbosa','de Oliveira','1996-08-30','Brasil','M'),
-('Marquinhos','Marcos','Silva','1994-05-14','Brasil','M'),
-('Diego','Costa','da Silva','1988-10-07','Brasil','M'),
-('Willian','Gomes','de S.','1988-08-09','Brasil','M'),
+('Neymar','Junior','Santos','1992-02-05','Brasil','M','123.456.789-00'),
+('Philippe','Coutinho','Correia','1992-06-12','Brasil','M','234.567.890-11'),
+('Vinicius','Junior','Santos','2000-07-12','Brasil','M','345.678.901-22'),
+('Casemiro','Gabriel','Silva','1992-02-23','Brasil','M','456.789.012-33'),
+('Gabriel','Jesus','Nascimento','1997-04-03','Brasil','M','567.890.123-44'),
+('Rodrygo','Goes','Silva','2001-01-09','Brasil','M','678.901.234-55'),
+('Arthur','Melo','Nascimento','1996-08-12','Brasil','M','789.012.345-66'),
+('Raphinha','de Oliveira','Nascimento','1996-12-14','Brasil','M','890.123.456-77'),
+('Alex','Sandro','Lima','1991-01-26','Brasil','M','901.234.567-88'),
+('Thiago','Alcantara','do Nascimento','1991-04-11','Brasil','M','012.345.678-99'),
+('Fred','Rodrigues','Silva','1993-03-05','Brasil','M','123.456.789-01'),
+('Gabriel','Barbosa','de Oliveira','1996-08-30','Brasil','M','234.567.890-12'),
+('Marquinhos','Marcos','Silva','1994-05-14','Brasil','M','345.678.901-23'),
+('Diego','Costa','da Silva','1988-10-07','Brasil','M','456.789.012-34'),
+('Willian','Gomes','de S.','1988-08-09','Brasil','M','567.890.123-45'),
 
-('Marta','Vieira','Silva','1986-02-19','Brasil','F'),
-('Debinha','Miri','Silva','1991-10-20','Brasil','F'),
-('Andressa','Alves','Silva','1992-06-10','Brasil','F'),
-('Formiga','','de Souza','1981-03-03','Brasil','F'),
-('Cristiane','Rozeira','de Souza','1985-05-15','Brasil','F'),
-('Bia','Zaneratto','da Silva','1993-05-17','Brasil','F'),
-('Giovana','Queiroz','','1996-11-10','Brasil','F'),
-('Tamires','Cunha','da Silva','1987-05-10','Brasil','F'),
-('Fabiana','','Silva','1989-03-15','Brasil','F'),
-('Beatriz','','Batista','1998-08-22','Brasil','F'),
-('Lucas','','Paquetá','1997-08-27','Brasil','M'),
-('Richarlison','','Andrade','1997-05-10','Brasil','M'),
-('Bruno','','Guimarães','1997-11-16','Brasil','M'),
-('Antony','','Santos','2000-02-24','Brasil','M'),
-('Matheus','','Cunha','1999-05-27','Brasil','M'),
+('Marta','Vieira','Silva','1986-02-19','Brasil','F','678.901.234-56'),
+('Debinha','Miri','Silva','1991-10-20','Brasil','F','789.012.345-67'),
+('Andressa','Alves','Silva','1992-06-10','Brasil','F','890.123.456-78'),
+('Formiga','','de Souza','1981-03-03','Brasil','F','901.234.567-89'),
+('Cristiane','Rozeira','de Souza','1985-05-15','Brasil','F','012.345.678-90'),
+('Bia','Zaneratto','da Silva','1993-05-17','Brasil','F','123.456.789-02'),
+('Giovana','Queiroz','','1996-11-10','Brasil','F','234.567.890-13'),
+('Tamires','Cunha','da Silva','1987-05-10','Brasil','F','345.678.901-24'),
+('Fabiana','','Silva','1989-03-15','Brasil','F','456.789.012-35'),
+('Beatriz','','Batista','1998-08-22','Brasil','F','567.890.123-46'),
+('Lucas','','Paquetá','1997-08-27','Brasil','M','678.901.234-57'),
+('Richarlison','','Andrade','1997-05-10','Brasil','M','789.012.345-68'),
+('Bruno','','Guimarães','1997-11-16','Brasil','M','890.123.456-79'),
+('Antony','','Santos','2000-02-24','Brasil','M','901.234.567-80'),
+('Matheus','','Cunha','1999-05-27','Brasil','M','012.345.678-91'),
 -- Árbitros 31...60
-('Wilton','Pereira','Sampaio','1981-12-28','Brasil','M'),
-('Raphael','Claus','Silva','1979-09-06','Brasil','M'),
-('Anderson','Daronco','Santos','1981-01-06','Brasil','M'),
-('Braulio','Silva','Machado','1979-03-13','Brasil','M'),
-('Wagner','Reway','Nascimento','1981-07-03','Brasil','M'),
-('Luiz','Flavio','Oliveira','1977-10-13','Brasil','M'),
-('Bruno','Arleu','Araujo','1986-08-12','Brasil','M'),
-('Rodolpho','Toski','Marques','1978-04-26','Brasil','M'),
-('Savio','Pereira','Sampaio','1984-09-21','Brasil','M'),
-('Ramon','Abatti','Abel','1987-05-30','Brasil','M'),
-('Flavio','Rodrigues','Souza','1980-11-05','Brasil','M'),
-('Jean','Pierre','Lima','1982-07-16','Brasil','M'),
-('Rafael','Traci','Silva','1983-02-28','Brasil','M'),
-('Edina','Alves','Batista','1980-01-10','Brasil','F'),
-('Daiane','Muniz','Santos','1984-11-20','Brasil','F'),
-('Neuza','Ines','Back','1969-04-11','Brasil','F'),
-('Leila','Cruz','Araujo','1982-06-15','Brasil','F'),
-('Rejane','Caetano','Silva','1981-08-22','Brasil','F'),
-('Deborah','Cecilia','Cruz','1980-03-17','Brasil','F'),
-('Thayslane','Costa','Oliveira','1985-09-08','Brasil','F'),
-('Igor','Junio','Benevenuto','1989-12-14','Brasil','M'),
-('Paulo','Cesar','Zanovelli','1977-05-19','Brasil','M'),
-('Vinicius','Goncalves','Dias','1983-10-25','Brasil','M'),
-('Emerson','Ricardo','Almeida','1982-04-30','Brasil','M'),
-('Dewson','Fernando','Freitas','1981-07-12','Brasil','M'),
-('Marcelo','Carvalho','Souza','1978-03-08','Brasil','M'),
-('Jefferson','Ferreira','Lima','1980-06-22','Brasil','M'),
-('Andre','Luiz','Castro','1975-11-15','Brasil','M'),
-('Caio','Max','Augusto','1981-09-03','Brasil','M'),
-('Dyorgines','Jose','Padovani','1979-08-17','Brasil','M'),
+('Wilton','Pereira','Sampaio','1981-12-28','Brasil','M','123.456.789-03'),
+('Raphael','Claus','Silva','1979-09-06','Brasil','M','234.567.890-14'),
+('Anderson','Daronco','Santos','1981-01-06','Brasil','M','345.678.901-25'),
+('Braulio','Silva','Machado','1979-03-13','Brasil','M','456.789.012-36'),
+('Wagner','Reway','Nascimento','1981-07-03','Brasil','M','567.890.123-47'),
+('Luiz','Flavio','Oliveira','1977-10-13','Brasil','M','678.901.234-58'),
+('Bruno','Arleu','Araujo','1986-08-12','Brasil','M','789.012.345-69'),
+('Rodolpho','Toski','Marques','1978-04-26','Brasil','M','890.123.456-70'),
+('Savio','Pereira','Sampaio','1984-09-21','Brasil','M','901.234.567-81'),
+('Ramon','Abatti','Abel','1987-05-30','Brasil','M','012.345.678-92'),
+('Flavio','Rodrigues','Souza','1980-11-05','Brasil','M','123.456.789-04'),
+('Jean','Pierre','Lima','1982-07-16','Brasil','M','234.567.890-15'),
+('Rafael','Traci','Silva','1983-02-28','Brasil','M','345.678.901-26'),
+('Edina','Alves','Batista','1980-01-10','Brasil','F','456.789.012-37'),
+('Daiane','Muniz','Santos','1984-11-20','Brasil','F','567.890.123-48'),
+('Neuza','Ines','Back','1969-04-11','Brasil','F','678.901.234-59'),
+('Leila','Cruz','Araujo','1982-06-15','Brasil','F','789.012.345-60'),
+('Rejane','Caetano','Silva','1981-08-22','Brasil','F','890.123.456-71'),
+('Deborah','Cecilia','Cruz','1980-03-17','Brasil','F','901.234.567-82'),
+('Thayslane','Costa','Oliveira','1985-09-08','Brasil','F','012.345.678-93'),
+('Igor','Junio','Benevenuto','1989-12-14','Brasil','M','123.456.789-05'),
+('Paulo','Cesar','Zanovelli','1977-05-19','Brasil','M','234.567.890-16'),
+('Vinicius','Goncalves','Dias','1983-10-25','Brasil','M','345.678.901-27'),
+('Emerson','Ricardo','Almeida','1982-04-30','Brasil','M','456.789.012-38'),
+('Dewson','Fernando','Freitas','1981-07-12','Brasil','M','567.890.123-49'),
+('Marcelo','Carvalho','Souza','1978-03-08','Brasil','M','678.901.234-50'),
+('Jefferson','Ferreira','Lima','1980-06-22','Brasil','M','789.012.345-61'),
+('Andre','Luiz','Castro','1975-11-15','Brasil','M','890.123.456-72'),
+('Caio','Max','Augusto','1981-09-03','Brasil','M','901.234.567-83'),
+('Dyorgines','Jose','Padovani','1979-08-17','Brasil','M','012.345.678-94'),
 --Treinadores 61...90
-('Abel',null,'Ferreira','1971-10-22','Brasil','M'),
-('Tite',null,'Cerezo','1961-05-25','Brasil','M'),
-('Mano',null,'Menezes','1962-06-17','Brasil','M'),
-('Vanderlei',null,'Lugano','1979-08-02','Brasil','M'),
-('Renato',null,'Gaúcho','1962-09-10','Brasil','M'),
-('Felipe',null,'Scolari','1948-11-09','Brasil','M'),
-('Zé',null,'Ricardo','1965-12-15','Brasil','M'),
-('Cuca',null,'Silveira','1963-06-07','Brasil','M'),
-('Jorge',null,'Jesus','1954-07-24','Portugal','M'),
-('Bruno',null,'Lage','1980-11-12','Portugal','M'),
-('Rui',null,'Vitória','1967-10-16','Portugal','M'),
-('Sérgio',null,'Conceição','1974-11-15','Portugal','M'),
-('Paulo',null,'Fonseca','1973-03-05','Portugal','M'),
-('Carlos',null,'Carvalhal','1965-12-28','Portugal','M'),
-('Nuno',null,'Espírito Santo','1974-01-25','Portugal','M'),
-('Vítor',null,'Pereira','1968-08-26','Portugal','M'),
-('Jesualdo',null,'Faria','1948-05-25','Portugal','M'),
-('Pedro',null,'Caixinha','1970-11-15','Portugal','M'),
-('Miguel',null,'Cardoso','1972-01-29','Portugal','M'),
-('Sérgio',null,'Vieira','1976-06-22','Portugal','M'),
-('Luís',null,'Castro','1972-03-03','Portugal','M'),
-('Hélder',null,'Cristóvão','1962-02-17','Portugal','M'),
-('José',null,'Couceiro','1962-04-14','Portugal','M'),
-('António', null, 'Oliveira', '1952-02-18', 'Portugal', 'M'),
-('Fernando', null, 'Santos', '1954-10-24', 'Portugal', 'M'),
-('Carlos', null, 'Queiroz', '1953-03-12', 'Portugal', 'M'),
-('Paulo',null,'Bento','1966-11-20','Portugal','M'),
-('Luís',null,'Campos','1964-02-28','Portugal','M'),
-('Rui',null,'Jorge','1967-10-27','Portugal','M'),
+('Abel',null,'Ferreira','1971-10-22','Brasil','M','123.456.789-06'),
+('Tite',null,'Cerezo','1961-05-25','Brasil','M','234.567.890-17'),
+('Mano',null,'Menezes','1962-06-17','Brasil','M','345.678.901-28'),
+('Vanderlei',null,'Lugano','1979-08-02','Brasil','M','456.789.012-39'),
+('Renato',null,'Gaúcho','1962-09-10','Brasil','M','567.890.123-40'),
+('Felipe',null,'Scolari','1948-11-09','Brasil','M','678.901.234-51'),
+('Zé',null,'Ricardo','1965-12-15','Brasil','M','789.012.345-62'),
+('Cuca',null,'Silveira','1963-06-07','Brasil','M','890.123.456-73'),
+('Jorge',null,'Jesus','1954-07-24','Portugal','M','901.234.567-84'),
+('Bruno',null,'Lage','1980-11-12','Portugal','M','012.345.678-95'),
+('Rui',null,'Vitória','1967-10-16','Portugal','M','123.456.789-07'),
+('Sérgio',null,'Conceição','1974-11-15','Portugal','M','234.567.890-18'),
+('Paulo',null,'Fonseca','1973-03-05','Portugal','M','345.678.901-29'),
+('Carlos',null,'Carvalhal','1965-12-28','Portugal','M','456.789.012-30'),
+('Nuno',null,'Espírito Santo','1974-01-25','Portugal','M','567.890.123-41'),
+('Vítor',null,'Pereira','1968-08-26','Portugal','M','678.901.234-52'),
+('Jesualdo',null,'Faria','1948-05-25','Portugal','M','789.012.345-63'),
+('Pedro',null,'Caixinha','1970-11-15','Portugal','M','890.123.456-74'),
+('Miguel',null,'Cardoso','1972-01-29','Portugal','M','901.234.567-85'),
+('Sérgio',null,'Vieira','1976-06-22','Portugal','M','012.345.678-96'),
+('Luís',null,'Castro','1972-03-03','Portugal','M','123.456.789-08'),
+('Hélder',null,'Cristóvão','1962-02-17','Portugal','M','234.567.890-19'),
+('José',null,'Couceiro','1962-04-14','Portugal','M','345.678.901-20'),
+('António', null, 'Oliveira', '1952-02-18', 'Portugal', 'M','456.789.012-31'),
+('Fernando', null, 'Santos', '1954-10-24', 'Portugal', 'M','567.890.123-42'),
+('Carlos', null, 'Queiroz', '1953-03-12', 'Portugal', 'M','678.901.234-53'),
+('Paulo',null,'Bento','1966-11-20','Portugal','M','789.012.345-64'),
+('Luís',null,'Campos','1964-02-28','Portugal','M','890.123.456-75'),
+('Rui',null,'Jorge','1967-10-27','Portugal','M','901.234.567-86'),
 --Funcionarios comisão técnica 91...120
-('José','Carlos','Oliveira','1975-04-15','Brasil','M'),
-('Maria','Antônia','Santos','1980-08-22','Brasil','F'), 
-('Roberto','Silva','Lima','1972-11-30','Brasil','M'),
-('Ana','Paula','Costa','1983-02-18','Brasil','F'),
-('Francisco','José','Pereira','1970-06-25','Brasil','M'),
-('Sandra','Regina','Ferreira','1978-09-14','Brasil','F'),
-('Marcos','Antonio','Souza','1968-12-03','Brasil','M'),
-('Lucia','Maria','Rodrigues','1982-05-20','Brasil','F'),
-('Paulo','Roberto','Santos','1973-07-11','Brasil','M'),
-('Cristina','Silva','Lima','1977-10-28','Brasil','F'),
-('Antonio','Carlos','Costa','1969-03-17','Brasil','M'),
-('Regina','Santos','Oliveira','1981-01-09','Brasil','F'),
-('Jorge','Luis','Ferreira','1974-08-26','Brasil','M'),
-('Amanda','Costa','Silva','1979-12-05','Brasil','F'),
-('Carlos','Alberto','Lima','1971-04-23','Brasil','M'),
-('Patricia','Regina','Santos','1976-11-14','Brasil','F'),
-('Marcelo','José','Oliveira','1984-02-07','Brasil','M'),
-('Fernanda','Silva','Costa','1973-09-30','Brasil','F'),
-('Ricardo','Antonio','Pereira','1980-05-19','Brasil','M'),
-('Juliana','Maria','Lima','1975-10-12','Brasil','F'),
-('Eduardo','Santos','Silva','1972-06-28','Brasil','M'),
-('Beatriz','Costa','Ferreira','1978-03-15','Brasil','F'),
-('Rodrigo','Lima','Oliveira','1983-07-24','Brasil','M'),
-('Carla','Santos','Pereira','1974-12-11','Brasil','F'),
-('Felipe','Silva','Costa','1981-04-06','Brasil','M'),
-('Monica','Regina','Lima','1977-08-29','Brasil','F'),
-('Alexandre','José','Santos','1970-01-13','Brasil','M'),
-('Luciana','Costa','Silva','1982-06-22','Brasil','F'),
-('Daniel','Antonio','Oliveira','1976-09-09','Brasil','M'),
-('Andrea','Maria','Pereira','1979-11-26','Brasil','F');
+('José','Carlos','Oliveira','1975-04-15','Brasil','M','012.345.678-97'),
+('Maria','Antônia','Santos','1980-08-22','Brasil','F','123.456.789-09'), 
+('Roberto','Silva','Lima','1972-11-30','Brasil','M','234.567.890-10'),
+('Ana','Paula','Costa','1983-02-18','Brasil','F','345.678.901-21'),
+('Francisco','José','Pereira','1970-06-25','Brasil','M','456.789.012-32'),
+('Sandra','Regina','Ferreira','1978-09-14','Brasil','F','567.890.123-43'),
+('Marcos','Antonio','Souza','1968-12-03','Brasil','M','678.901.234-54'),
+('Lucia','Maria','Rodrigues','1982-05-20','Brasil','F','789.012.345-65'),
+('Paulo','Roberto','Santos','1973-07-11','Brasil','M','890.123.456-76'),
+('Cristina','Silva','Lima','1977-10-28','Brasil','F','901.234.567-87'),
+('Antonio','Carlos','Costa','1969-03-17','Brasil','M','012.345.678-98'),
+('Regina','Santos','Oliveira','1981-01-09','Brasil','F','123.456.789-10'),
+('Jorge','Luis','Ferreira','1974-08-26','Brasil','M','234.567.890-21'),
+('Amanda','Costa','Silva','1979-12-05','Brasil','F','345.678.901-32'),
+('Carlos','Alberto','Lima','1971-04-23','Brasil','M','456.789.012-43'),
+('Patricia','Regina','Santos','1976-11-14','Brasil','F','567.890.123-54'),
+('Marcelo','José','Oliveira','1984-02-07','Brasil','M','678.901.234-65'),
+('Fernanda','Silva','Costa','1973-09-30','Brasil','F','789.012.345-76'),
+('Ricardo','Antonio','Pereira','1980-05-19','Brasil','M','890.123.456-87'),
+('Juliana','Maria','Lima','1975-10-12','Brasil','F','901.234.567-98'),
+('Eduardo','Santos','Silva','1972-06-28','Brasil','M','012.345.678-09'),
+('Beatriz','Costa','Ferreira','1978-03-15','Brasil','F','123.456.789-21'),
+('Rodrigo','Lima','Oliveira','1983-07-24','Brasil','M','234.567.890-32'),
+('Carla','Santos','Pereira','1974-12-11','Brasil','F','345.678.901-43'),
+('Felipe','Silva','Costa','1981-04-06','Brasil','M','456.789.012-54'),
+('Monica','Regina','Lima','1977-08-29','Brasil','F','567.890.123-65'),
+('Alexandre','José','Santos','1970-01-13','Brasil','M','678.901.234-76'),
+('Luciana','Costa','Silva','1982-06-22','Brasil','F','789.012.345-87'),
+('Daniel','Antonio','Oliveira','1976-09-09','Brasil','M','890.123.456-98'),
+('Andrea','Maria','Pereira','1979-11-26','Brasil','F','901.234.567-09');
 
 -- 2; povoar a tabela Arbitro
 INSERT INTO Arbitro (id_pessoa, federacao, tipoLicenca, status) VALUES
@@ -658,3 +658,50 @@ INSERT INTO Classificacao (id_torneio, id_time, jogos, vitorias, empates, derrot
 (24, 28, 1, 0, 0, 1, 0, 4, -4, 0),
 (24, 29, 1, 1, 0, 0, 1, 0,  1, 3),
 (24, 30, 1, 0, 0, 1, 0, 1, -1, 0);
+
+INSERT INTO Escalacao_time (id_partida, id_jogador, titular) VALUES
+-- Partida 1: Corinthians x Palmeiras
+(1, 1, true),   -- Neymar (Corinthians)
+(1, 3, true),   -- Vinicius Jr (Palmeiras)
+-- Partida 2: Grêmio x Fluminense
+(2, 4, true),   -- Casemiro (Grêmio)
+(2, 5, true),   -- Gabriel Jesus (Fluminense)
+-- Partida 3: Atlético-MG x Flamengo
+(3, 6, true),   -- Rodrygo (Atlético-MG)
+(3, 7, true),   -- Arthur (Flamengo)
+-- Partida 4: São Paulo x Cruzeiro
+(4, 8, true),   -- Raphinha (São Paulo)
+(4, 9, true),   -- Alex Sandro (Cruzeiro)
+-- Partida 5: Internacional x Athletico-PR
+(5, 10, true),  -- Thiago (Internacional)
+(5, 11, true),  -- Fred (Athletico-PR)
+-- Partida 6: Fortaleza x Amazonas
+(6, 12, true),  -- Gabriel Barbosa (Fortaleza)
+(6, 13, true),  -- Marquinhos (Amazonas)
+-- Partida 7: Sport x Goiás
+(7, 14, true),  -- Diego Costa (Sport)
+(7, 15, true),  -- Willian (Goiás)
+-- Partida 8: Bahia x Santos
+(8, 2, true),   -- Coutinho (Bahia)
+(8, 26, true),  -- Lucas Paquetá (Santos)
+-- Partida 9: Vasco x Vitória
+(9, 27, true),  -- Richarlison (Vasco)
+(9, 28, true),  -- Bruno Guimarães (Vitória)
+-- Partida 10: Guarani x CSA
+(10, 29, true), -- Antony (Guarani)
+(10, 30, true), -- Matheus Cunha (CSA)
+-- Partida 11: Corinthians Fem x Santos Fem
+(11, 16, true), -- Marta (Corinthians Fem)
+(11, 17, true), -- Debinha (Santos Fem)
+-- Partida 12: São Paulo Fem x Flamengo Fem
+(12, 18, true), -- Andressa (São Paulo Fem)
+(12, 19, true), -- Formiga (Flamengo Fem)
+-- Partida 13: Internacional Fem x Palmeiras Fem
+(13, 20, true), -- Cristiane (Internacional Fem)
+(13, 21, true), -- Bia Zaneratto (Palmeiras Fem)
+-- Partida 14: Grêmio Fem x Cruzeiro Fem
+(14, 22, true), -- Giovana (Grêmio Fem)
+(14, 23, true), -- Tamires (Cruzeiro Fem)
+-- Partida 15: Fluminense Fem x Atlético-MG Fem
+(15, 24, true), -- Fabiana (Fluminense Fem)
+(15, 25, true); -- Beatriz (Atlético-MG Fem)

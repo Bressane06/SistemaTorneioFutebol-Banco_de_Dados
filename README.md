@@ -29,6 +29,8 @@ Sistema de banco de dados para gerenciamento completo de torneios de futebol, in
 │   └── SoccerData_triggers.sql  # Triggers do sistema
 ├── docs/                        # Documentação adicional
 ├── relatorioTecnico/           # Relatório técnico do projeto
+├── .gitignore                  # Arquivos ignorados pelo Git
+├── LICENSE                     # Licença do projeto
 └── README.md                   # Este arquivo
 ```
 
