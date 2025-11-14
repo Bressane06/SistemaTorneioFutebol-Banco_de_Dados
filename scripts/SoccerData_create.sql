@@ -10,6 +10,7 @@ CREATE TABLE Pessoa (
     sexo CHAR(1) NOT NULL CHECK (sexo IN ('M', 'F'))
 );
 
+-- Telefone_Pessoa
 CREATE TABLE Telefone_Pessoa (
 	id_pessoa INTEGER NOT NULL,
 	telefone VARCHAR(20) NOT NULL,
@@ -17,6 +18,7 @@ CREATE TABLE Telefone_Pessoa (
 	FOREIGN KEY (id_pessoa) REFERENCES Pessoa(id_pessoa)
 );
 
+-- Email_Pessoa
 CREATE TABLE Email_Pessoa (
     id_pessoa INTEGER NOT NULL,
     email VARCHAR(60) NOT NULL,
@@ -195,6 +197,7 @@ CREATE TABLE Classificacao (
     FOREIGN KEY (id_time) REFERENCES Time(id_time)
 );
 
+-- Escalacao_time
 CREATE TABLE Escalacao_time (
     id_partida INTEGER NOT NULL,
     id_jogador INTEGER NOT NULL,
