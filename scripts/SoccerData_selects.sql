@@ -139,15 +139,18 @@ SELECT
     t.nome AS time,
     COUNT(*) AS total_cartoes
 FROM EventoPartida AS e
-    JOIN Jogador AS j ON e.id_jogador = j.id_jogador
-    JOIN Time AS t ON j.id_time_atual = t.id_time
-    JOIN Partida AS p ON e.id_partida = p.id_partida
+	JOIN Jogador AS j ON e.id_jogador = j.id_pessoa
+	JOIN Partida AS p ON e.id_partida = p.id_partida
+	JOIN Elenco AS el ON el.id_jogador = j.id_pessoa
+   				AND p.dataPartida BETWEEN el.dataInicio 
+                         AND COALESCE(el.dataFim, p.dataPartida)
+	JOIN Time AS t ON t.id_time = el.id_time
 WHERE e.tipo_evento IN ('CARTAO_AMARELO', 'CARTAO_VERMELHO')
   AND p.id_torneio = (
-      SELECT 
-        id_torneio 
+        SELECT id_torneio 
         FROM Torneio
-      WHERE nome = 'Brasileiro Feminino A1' AND ano = 2025
+        WHERE nome = 'Brasileiro Feminino A1' 
+          AND ano = 2025
   )
 GROUP BY t.nome
-ORDER BY total_cartoes ASC;
+ORDER BY total_cartoes;
