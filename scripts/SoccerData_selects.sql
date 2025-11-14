@@ -63,6 +63,24 @@ WHERE (tc.nome IN ('Corinthians', 'Santos', 'Palmeiras', 'São Paulo FC')
     AND p.status = 'Encerrada'
 ORDER BY p.rodada;
 
+-- 4) Árbitros que mais apitaram partidas no Campeonato Brasileiro Série A Masculino 2025
+SELECT
+    CONCAT(p.primeiroNome, ' ', COALESCE(p.nomeMeio || ' ', ''), p.ultimoNome) AS nome_arbitro,
+    COUNT(*) AS total_partidas
+FROM Partida AS pa
+    JOIN Arbitragem AS a ON pa.id_arbitragem = a.id_arbitragem
+    JOIN Arbitro AS ar ON a.id_arbitro_principal = ar.id_pessoa
+    JOIN Pessoa AS p ON ar.id_pessoa = p.id_pessoa
+WHERE pa.id_torneio = (
+    SELECT id_torneio
+    FROM Torneio
+    WHERE nome = 'Campeonato Brasileiro Série A'
+      AND genero = 'Masculino'
+      AND ano = 2025
+)
+GROUP BY nome_arbitro
+ORDER BY total_partidas DESC;
+
 -- 5) Estádios que nunca sediaram uma partida
 SELECT 
     e.nome AS estadio,
