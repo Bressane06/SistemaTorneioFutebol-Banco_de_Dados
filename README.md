@@ -20,15 +20,23 @@ Sistema de banco de dados para gerenciamento completo de torneios de futebol, in
 
 ## 📁 Estrutura do Projeto
 ```
-├── scripts/
+├── scripts/                     # Scripts SQL do sistema
 │   ├── SoccerData_create.sql    # Criação das tabelas
 │   ├── SoccerData_inserts.sql   # Dados de exemplo
 │   ├── SoccerData_selects.sql   # Consultas úteis
 │   ├── SoccerData_functions.sql # Funções personalizadas
 │   ├── SoccerData_sp.sql        # Stored procedures
-│   └── SoccerData_triggers.sql  # Triggers do sistema
-├── docs/                        # Documentação adicional
-├── relatorioTecnico/           # Relatório técnico do projeto
+│   ├── SoccerData_triggers.sql  # Triggers do sistema
+│   └── README.md               # Documentação dos scripts
+├── docs/                        # Documentação e diagramas
+│   ├── DER.png                 # Diagrama Entidade-Relacionamento
+│   ├── DiagramaRelacional.png  # Diagrama do modelo relacional
+│   ├── DiagramaRelacional.pgerd # Arquivo fonte (pgModeler)
+│   ├── RelatórioTécnico-GabrielBressane.pdf # Relatório completo
+│   └── README.md               # Guia da documentação
+├── relatorioTecnico/           # Relatório técnico detalhado
+│   └── README.md               # Status e planejamento
+├── devTest.session.sql         # Sessão de desenvolvimento
 ├── .gitignore                  # Arquivos ignorados pelo Git
 ├── LICENSE                     # Licença do projeto
 └── README.md                   # Este arquivo
@@ -36,20 +44,18 @@ Sistema de banco de dados para gerenciamento completo de torneios de futebol, in
 
 ## 🚀 Como Usar
 
-1. Execute o script de criação das tabelas:
-   ```sql
-   -- Execute SoccerData_create.sql
-   ```
+### Configuração Inicial
+1. **Criar estrutura**: Execute `scripts/SoccerData_create.sql`
+2. **Criar funções**: Execute `scripts/SoccerData_functions.sql`
+3. **Criar procedures**: Execute `scripts/SoccerData_sp.sql`
+4. **Criar triggers**: Execute `scripts/SoccerData_triggers.sql`
+5. **Popular dados**: Execute `scripts/SoccerData_inserts.sql`
+6. **Testar sistema**: Execute `scripts/SoccerData_selects.sql`
 
-2. Popule o banco com dados de exemplo:
-   ```sql
-   -- Execute SoccerData_inserts.sql
-   ```
-
-3. Utilize as consultas pré-definidas:
-   ```sql
-   -- Execute SoccerData_selects.sql
-   ```
+### Documentação Detalhada
+- **Scripts SQL**: Ver [scripts/README.md](scripts/README.md)
+- **Diagramas**: Ver [docs/README.md](docs/README.md)
+- **Relatório Técnico**: Ver [relatorioTecnico/README.md](relatorioTecnico/README.md)
 
 ## 🎯 Funcionalidades
 - Cadastro de pessoas (jogadores, árbitros, treinadores)
@@ -59,18 +65,31 @@ Sistema de banco de dados para gerenciamento completo de torneios de futebol, in
 - Sistema de classificação automática
 - Controle de arbitragem
 
-## 📊 Principais Consultas
-- Classificação de times por torneio
-- Estatísticas de jogadores
-- Histórico de partidas
-- Eventos por partida
-- Desempenho de árbitros
+## 📊 Principais Funcionalidades
+
+### Consultas Disponíveis
+- Classificação completa de torneios
+- Estatísticas detalhadas de jogadores
+- Histórico completo de partidas
+- Eventos e lances por partida
+- Análise de desempenho de árbitros
+- Artilheiros por campeonato
+- Público médio por estádio
+- Cartões por time
+
+### Automações
+- Atualização automática da classificação
+- Validação de vínculos de jogadores
+- Controle de eventos de partida
+- Transferências entre times
 
 ## 🛠️ Tecnologias
-- SQL (compatível com PostgreSQL/MySQL)
-- Triggers para atualizações automáticas
-- Stored procedures para operações complexas
-- Functions para cálculos específicos
+- **PostgreSQL** (versão 15+)
+- **SQL** com recursos avançados
+- **Triggers** para automação
+- **Stored Procedures** para operações complexas
+- **Functions** para cálculos específicos
+- **pgModeler** para modelagem
 
 ## 📝 Licença
 Ver arquivo [LICENSE](LICENSE) para detalhes.
