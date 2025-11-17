@@ -152,7 +152,7 @@ WHERE c.id_torneio = (
 )
 ORDER BY c.pontos DESC, c.saldo_gols DESC, c.gols_pro DESC;
 
--- 10) Times com menos cartões recebidos no Brasileiro Feminino A1 2025
+-- 10) Times com mais cartões recebidos no Brasileiro Feminino A1 2025
 SELECT 
     t.nome AS time,
     COUNT(*) AS total_cartoes
@@ -171,4 +171,4 @@ WHERE e.tipo_evento IN ('CARTAO_AMARELO', 'CARTAO_VERMELHO')
           AND ano = 2025
   )
 GROUP BY t.nome
-ORDER BY total_cartoes;
+ORDER BY total_cartoes DESC;
