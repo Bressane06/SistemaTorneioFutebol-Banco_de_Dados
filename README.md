@@ -22,20 +22,20 @@ Sistema de banco de dados para gerenciamento completo de torneios de futebol, in
 ```
 ├── scripts/                     # Scripts SQL do sistema
 │   ├── SoccerData_create.sql    # Criação das tabelas
+│   ├── SoccerData_functions.sql # Funções personalizadas
 │   ├── SoccerData_inserts.sql   # Dados de exemplo
 │   ├── SoccerData_selects.sql   # Consultas úteis
-│   ├── SoccerData_functions.sql # Funções personalizadas
 │   ├── SoccerData_sp.sql        # Stored procedures
 │   ├── SoccerData_triggers.sql  # Triggers do sistema
 │   └── README.md               # Documentação dos scripts
 ├── docs/                        # Documentação e diagramas
-│   ├── DER.png                 # Diagrama Entidade-Relacionamento
-│   ├── DiagramaRelacional.png  # Diagrama do modelo relacional
-│   ├── DiagramaRelacional.pgerd # Arquivo fonte (pgModeler)
-│   ├── RelatórioTécnico-GabrielBressane.pdf # Relatório completo
+│   ├── SoccerData_DER.png      # Diagrama Entidade-Relacionamento
+│   ├── SoccerData_ERelacional.png # Diagrama do modelo relacional
+│   ├── SoccerData_ERelacional.pgerd # Arquivo fonte (pgModeler)
 │   └── README.md               # Guia da documentação
 ├── relatorioTecnico/           # Relatório técnico detalhado
-│   └── README.md               # Status e planejamento
+│   ├── RelatórioTécnico-GabrielBressane.pdf # Relatório completo
+│   └── README.md               # Guia do relatório
 ├── devTest.session.sql         # Sessão de desenvolvimento
 ├── .gitignore                  # Arquivos ignorados pelo Git
 ├── LICENSE                     # Licença do projeto

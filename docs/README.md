@@ -4,34 +4,27 @@ Esta pasta contém a documentação técnica e diagramas do sistema.
 
 ## 📁 Arquivos
 
-### `DER.png`
+### `SoccerData_DER.png`
 Diagrama Entidade-Relacionamento do sistema.
 - Mostra entidades e relacionamentos
 - Cardinalidades e atributos
 - Visão conceitual do banco
 
-![DER](DER.png)
+![DER](SoccerData_DER.png)
 
-### `DiagramaRelacional.png`
+### `SoccerData_ERelacional.png`
 Diagrama do modelo relacional implementado.
 - Tabelas com chaves primárias e estrangeiras
 - Estrutura física do banco de dados
 - Constraints e tipos de dados
 
-![Diagrama Relacional](DiagramaRelacional.png)
+![Diagrama Relacional](SoccerData_ERelacional.png)
 
-### `DiagramaRelacional.pgerd`
+### `SoccerData_ERelacional.pgerd`
 Arquivo fonte do diagrama relacional (pgModeler).
 - Arquivo editável do modelo
 - Permite modificações e atualizações
 - Formato nativo do pgModeler
-
-### `RelatórioTécnico-GabrielBressane.pdf`
-Relatório técnico completo do projeto.
-- Análise de requisitos
-- Modelagem conceitual e lógica
-- Implementação e testes
-- Conclusões e melhorias futuras
 
 ## 🔍 Como Visualizar
 
