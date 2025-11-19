@@ -46,22 +46,20 @@ WHERE p.id_torneio =
 GROUP BY t.nome
 ORDER BY gols_marcados DESC;
 
--- 3) Mostrar os jogos que já aconteceram dos 4 grandes de São Paulo
-SELECT 
-    tor.nome AS campeonato,
-    p.rodada,
-    tc.nome AS time_casa,
-    p.golsCasa,
-    p.golsFora,
-    tf.nome AS time_fora
-FROM Partida p
-    JOIN Time AS tc ON p.id_time_casa = tc.id_time
-    JOIN Time AS tf ON p.id_time_fora = tf.id_time
-    JOIN Torneio AS tor ON p.id_torneio = tor.id_torneio
-WHERE (tc.nome IN ('Corinthians', 'Santos', 'Palmeiras', 'São Paulo FC')
-   OR tf.nome IN ('Corinthians', 'Santos', 'Palmeiras', 'São Paulo FC'))
-    AND p.status = 'Encerrada'
-ORDER BY p.rodada;
+-- 3) Jogadores que marcaram gols em partidas (considerando apenas jogadores com contrato ativo)
+SELECT p.primeiroNome || ' ' || COALESCE(p.nomeMeio || ' ', '') || p.ultimoNome AS nome_jogador
+FROM Pessoa AS p JOIN Jogador j ON p.id_pessoa = j.id_pessoa
+WHERE j.id_pessoa IN (
+    SELECT 
+        id_jogador 
+    FROM Elenco 
+    WHERE dataFim IS NULL
+    INTERSECT
+    SELECT 
+        id_jogador 
+    FROM EventoPartida 
+    WHERE tipo_evento = 'GOL'
+);
 
 -- 4) Árbitros que mais apitaram partidas no Campeonato Brasileiro Série A Masculino 2025
 SELECT

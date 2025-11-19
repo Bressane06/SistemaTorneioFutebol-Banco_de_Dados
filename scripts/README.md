@@ -26,7 +26,7 @@ Consultas úteis e relatórios do sistema.
 Funções personalizadas do PostgreSQL.
 - `fn_gols_time_torneio()`: Gols de um time em torneio
 - `fn_partidas_vencidas_time_torneio()`: Vitórias por torneio
-- `fn_top_scorers_club()`: Top 10 artilheiros do clube
+- `fn_top_goleadores_clube()`: Top 10 artilheiros do clube
 
 ### `SoccerData_sp.sql`
 Stored procedures para operações complexas.

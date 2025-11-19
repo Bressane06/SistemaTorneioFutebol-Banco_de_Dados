@@ -78,7 +78,9 @@ CREATE TABLE Time (
     categoria VARCHAR(50) NOT NULL CHECK (categoria IN ('Profissional', 'Amador', 'Base')),
     genero VARCHAR(50) NOT NULL CHECK (genero IN ('Masculino', 'Feminino')),
     faixa_etaria VARCHAR(50) CHECK (faixa_etaria IN ('Principal', 'Sub-20', 'Sub-17', 'Sub-15')),
-    dataFundacao DATE NOT NULL
+    dataFundacao DATE NOT NULL,
+    id_time_pai INTEGER,
+    FOREIGN KEY (id_time_pai) REFERENCES Time(id_time)
 );
 -- Comissão Técnica
 CREATE TABLE ComissaoTecnica (

@@ -43,7 +43,7 @@ $$ LANGUAGE plpgsql;
 SELECT fn_partidas_vencidas_time_torneio(1, 1);  -- Exemplo de chamada da função
 
 -- 3) Retonar uma tabela com os 10 jogadores com mais gols por um clube
-CREATE OR REPLACE FUNCTION fn_top_scorers_club(
+CREATE OR REPLACE FUNCTION fn_top_goleadores_clube(
     p_id_time INTEGER
 )
 RETURNS TABLE (
@@ -52,14 +52,15 @@ RETURNS TABLE (
     total_gols INTEGER
 ) AS $$
 BEGIN
-    RETURN QUERY
+RETURN QUERY    
+    -- Seleciona os jogadores e conta seus gols
     SELECT 
         ep.id_jogador,
         CONCAT(p.primeiroNome, ' ', p.ultimoNome) AS nome_jogador,
         COUNT(*)::INTEGER AS total_gols
     FROM EventoPartida AS ep
-    JOIN Jogador AS j ON ep.id_jogador = j.id_pessoa
-    JOIN Pessoa AS p ON p.id_pessoa = j.id_pessoa
+        JOIN Jogador AS j ON ep.id_jogador = j.id_pessoa
+        JOIN Pessoa AS p ON p.id_pessoa = j.id_pessoa
     WHERE ep.tipo_evento = 'GOL'
       AND ep.id_time = p_id_time
     GROUP BY ep.id_jogador, p.primeiroNome, p.ultimoNome
@@ -69,4 +70,4 @@ END;
 $$ LANGUAGE plpgsql;
 
 
-SELECT * FROM fn_top_scorers_club(1);  -- Exemplo de chamada da função
+SELECT * FROM fn_top_goleadores_clube(1);  -- Exemplo de chamada da função
