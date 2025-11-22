@@ -481,39 +481,39 @@ INSERT INTO Partida(id_torneio, id_estadio, id_time_casa, id_time_fora, id_arbit
 -- 10; povoar a tabela Elenco
 -- Times 1-20 são masculinos, devem ter jogadores masculinos (1-15)
 -- Times 21-30 são femininos, devem ter jogadoras femininas (16-30)
-INSERT INTO Elenco (id_time, id_jogador, numeroCamisa, dataInicio) VALUES
+INSERT INTO Elenco (id_time, id_jogador, dataInicio) VALUES
 -- Masculino
-(1,1,10,'2022-01-10'),
-(2,3,11,'2022-01-11'), 
-(3,4,7,'2022-01-12'),
-(4,5,5,'2022-01-13'),
-(5,6,9,'2022-01-14'),
-(6,7,11,'2022-01-15'),
-(7,8,8,'2022-01-16'),
-(8,9,10,'2022-01-17'),
-(9,10,6,'2022-01-18'),
-(10,11,8,'2022-01-19'),
-(11,12,5,'2022-01-20'),
-(12,13,9,'2022-01-21'),
-(13,14,4,'2022-01-22'),
-(14,15,7,'2022-01-23'),
-(15,2,10,'2022-01-24'),
-(16,26,10,'2022-01-25'),
-(17,27,11,'2022-01-26'),
-(18,28,7,'2022-01-27'),
-(19,29,9,'2022-01-28'),
-(20,30,10,'2022-01-29'),
+(1,1,'2022-01-10'),
+(2,3,'2022-01-11'), 
+(3,4,'2022-01-12'),
+(4,5,'2022-01-13'),
+(5,6,'2022-01-14'),
+(6,7,'2022-01-15'),
+(7,8,'2022-01-16'),
+(8,9,'2022-01-17'),
+(9,10,'2022-01-18'),
+(10,11,'2022-01-19'),
+(11,12,'2022-01-20'),
+(12,13,'2022-01-21'),
+(13,14,'2022-01-22'),
+(14,15,'2022-01-23'),
+(15,2,'2022-01-24'),
+(16,26,'2022-01-25'),
+(17,27,'2022-01-26'),
+(18,28,'2022-01-27'),
+(19,29,'2022-01-28'),
+(20,30,'2022-01-29'),
 -- Feminino 
-(21,16,10,'2022-01-30'),
-(22,17,11,'2022-01-31'),
-(23,18,7,'2022-02-01'),
-(24,19,9,'2022-02-02'),
-(25,20,10,'2022-02-03'),
-(26,21,8,'2022-02-04'),
-(27,22,11,'2022-02-05'),
-(28,23,7,'2022-02-06'),
-(29,24,9,'2022-02-07'),
-(30,25,10,'2022-02-08');
+(21,16,'2022-01-30'),
+(22,17,'2022-01-31'),
+(23,18,'2022-02-01'),
+(24,19,'2022-02-02'),
+(25,20,'2022-02-03'),
+(26,21,'2022-02-04'),
+(27,22,'2022-02-05'),
+(28,23,'2022-02-06'),
+(29,24,'2022-02-07'),
+(30,25,'2022-02-08');
 -- 11; povoar a tabela ComissaoTecnica
 -- Um membro técnico por time (30 registros) usando pessoas 61..90 (treinadores em sua maioria).
 INSERT INTO ComissaoTecnica (id_time, id_pessoa, funcao, dataInicio, dataFim) VALUES
@@ -659,49 +659,49 @@ INSERT INTO Classificacao (id_torneio, id_time, jogos, vitorias, empates, derrot
 (24, 29, 1, 1, 0, 0, 1, 0,  1, 3),
 (24, 30, 1, 0, 0, 1, 0, 1, -1, 0);
 
-INSERT INTO Escalacao_time (id_partida, id_jogador, titular) VALUES
+INSERT INTO Escalacao_time (id_partida, id_jogador, titular, numeroCamisa) VALUES
 -- Partida 1: Corinthians x Palmeiras
-(1, 1, true),   -- Neymar (Corinthians)
-(1, 3, true),   -- Vinicius Jr (Palmeiras)
+(1, 1, true, 10),   -- Neymar (Corinthians)
+(1, 3, true, 11),   -- Vinicius Jr (Palmeiras)
 -- Partida 2: Grêmio x Fluminense
-(2, 4, true),   -- Casemiro (Grêmio)
-(2, 5, true),   -- Gabriel Jesus (Fluminense)
+(2, 4, true, 7),    -- Casemiro (Grêmio)
+(2, 5, true, 5),    -- Gabriel Jesus (Fluminense)
 -- Partida 3: Atlético-MG x Flamengo
-(3, 6, true),   -- Rodrygo (Atlético-MG)
-(3, 7, true),   -- Arthur (Flamengo)
+(3, 6, true, 9),    -- Rodrygo (Atlético-MG)
+(3, 7, true, 11),   -- Arthur (Flamengo)
 -- Partida 4: São Paulo x Cruzeiro
-(4, 8, true),   -- Raphinha (São Paulo)
-(4, 9, true),   -- Alex Sandro (Cruzeiro)
+(4, 8, true, 8),    -- Raphinha (São Paulo)
+(4, 9, true, 10),   -- Alex Sandro (Cruzeiro)
 -- Partida 5: Internacional x Athletico-PR
-(5, 10, true),  -- Thiago (Internacional)
-(5, 11, true),  -- Fred (Athletico-PR)
+(5, 10, true, 6),   -- Thiago (Internacional)
+(5, 11, true, 8),   -- Fred (Athletico-PR)
 -- Partida 6: Fortaleza x Amazonas
-(6, 12, true),  -- Gabriel Barbosa (Fortaleza)
-(6, 13, true),  -- Marquinhos (Amazonas)
+(6, 12, true, 5),   -- Gabriel Barbosa (Fortaleza)
+(6, 13, true, 9),   -- Marquinhos (Amazonas)
 -- Partida 7: Sport x Goiás
-(7, 14, true),  -- Diego Costa (Sport)
-(7, 15, true),  -- Willian (Goiás)
+(7, 14, true, 4),   -- Diego Costa (Sport)
+(7, 15, true, 7),   -- Willian (Goiás)
 -- Partida 8: Bahia x Santos
-(8, 2, true),   -- Coutinho (Bahia)
-(8, 26, true),  -- Lucas Paquetá (Santos)
+(8, 2, true, 10),   -- Coutinho (Bahia)
+(8, 26, true, 10),  -- Lucas Paquetá (Santos)
 -- Partida 9: Vasco x Vitória
-(9, 27, true),  -- Richarlison (Vasco)
-(9, 28, true),  -- Bruno Guimarães (Vitória)
+(9, 27, true, 11),  -- Richarlison (Vasco)
+(9, 28, true, 7),   -- Bruno Guimarães (Vitória)
 -- Partida 10: Guarani x CSA
-(10, 29, true), -- Antony (Guarani)
-(10, 30, true), -- Matheus Cunha (CSA)
+(10, 29, true, 9),  -- Antony (Guarani)
+(10, 30, true, 10), -- Matheus Cunha (CSA)
 -- Partida 11: Corinthians Fem x Santos Fem
-(11, 16, true), -- Marta (Corinthians Fem)
-(11, 17, true), -- Debinha (Santos Fem)
+(11, 16, true, 10), -- Marta (Corinthians Fem)
+(11, 17, true, 11), -- Debinha (Santos Fem)
 -- Partida 12: São Paulo Fem x Flamengo Fem
-(12, 18, true), -- Andressa (São Paulo Fem)
-(12, 19, true), -- Formiga (Flamengo Fem)
+(12, 18, true, 7),  -- Andressa (São Paulo Fem)
+(12, 19, true, 9),  -- Formiga (Flamengo Fem)
 -- Partida 13: Internacional Fem x Palmeiras Fem
-(13, 20, true), -- Cristiane (Internacional Fem)
-(13, 21, true), -- Bia Zaneratto (Palmeiras Fem)
+(13, 20, true, 10), -- Cristiane (Internacional Fem)
+(13, 21, true, 8),  -- Bia Zaneratto (Palmeiras Fem)
 -- Partida 14: Grêmio Fem x Cruzeiro Fem
-(14, 22, true), -- Giovana (Grêmio Fem)
-(14, 23, true), -- Tamires (Cruzeiro Fem)
+(14, 22, true, 11), -- Giovana (Grêmio Fem)
+(14, 23, true, 7),  -- Tamires (Cruzeiro Fem)
 -- Partida 15: Fluminense Fem x Atlético-MG Fem
-(15, 24, true), -- Fabiana (Fluminense Fem)
-(15, 25, true); -- Beatriz (Atlético-MG Fem)
+(15, 24, true, 9),  -- Fabiana (Fluminense Fem)
+(15, 25, true, 10); -- Beatriz (Atlético-MG Fem)

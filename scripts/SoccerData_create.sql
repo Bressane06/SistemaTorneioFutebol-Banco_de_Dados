@@ -100,7 +100,6 @@ CREATE TABLE Elenco (
     id_elenco INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     id_time INTEGER NOT NULL,
     id_jogador INTEGER NOT NULL,
-    numeroCamisa INTEGER NOT NULL,
     dataInicio DATE NOT NULL,
     dataFim DATE,
     UNIQUE (id_time, id_jogador),
@@ -204,6 +203,7 @@ CREATE TABLE Escalacao_time (
     id_partida INTEGER NOT NULL,
     id_jogador INTEGER NOT NULL,
     titular BOOLEAN NOT NULL,
+    numeroCamisa INTEGER NOT NULL,
     PRIMARY KEY (id_partida, id_jogador),
     FOREIGN KEY (id_partida) REFERENCES Partida(id_partida) ON DELETE CASCADE,
     FOREIGN KEY (id_jogador) REFERENCES Jogador(id_pessoa)

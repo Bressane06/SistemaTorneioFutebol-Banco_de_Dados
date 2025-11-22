@@ -64,8 +64,8 @@ $$ LANGUAGE plpgsql;
 -- Chamando a procedure para testar
 CALL CadastrarJogador(
     'Gabriel', 'Fiorentino', 'Bressane',
-    '1998-05-17',
-    'Brasileiro',
+    '2006-05-03',
+    'Brasil',
     'M',
     '567.890.123-14',  
     'Lateral Direito',
@@ -82,8 +82,7 @@ CALL CadastrarJogador(
 CREATE OR REPLACE PROCEDURE TransferirJogador(
     p_id_jogador INTEGER,
     p_id_time_origem INTEGER,
-    p_id_time_destino INTEGER,
-    p_numeroCamisa INTEGER
+    p_id_time_destino INTEGER
 )
 AS $$
 DECLARE
@@ -110,14 +109,14 @@ BEGIN
     END IF;
 
     -- Cria novo vínculo
-    INSERT INTO Elenco (id_time, id_jogador, numeroCamisa, dataInicio)
-    VALUES (p_id_time_destino, p_id_jogador, p_numeroCamisa, CURRENT_DATE);
+    INSERT INTO Elenco (id_time, id_jogador, dataInicio)
+    VALUES (p_id_time_destino, p_id_jogador, CURRENT_DATE);
 
 END;
 $$ LANGUAGE plpgsql;
 
 -- Exemplo de chamada da procedure
-CALL TransferirJogador(120,null, 1, 23);  
+CALL TransferirJogador(120,null, 1);  
 
 -- 3) Finalizar partida (sempre que executado, atualiza a classificação via trigger)
 CREATE OR REPLACE PROCEDURE FinalizarPartida(
