@@ -58,24 +58,27 @@ Sistema de banco de dados para gerenciamento completo de torneios de futebol, in
 - **Relatório Técnico**: Ver [relatorioTecnico/README.md](relatorioTecnico/README.md)
 
 ## 🎯 Funcionalidades
-- Cadastro de pessoas (jogadores, árbitros, treinadores)
-- Gestão de times e elencos
-- Controle de torneios e fases
-- Registro de partidas e eventos
-- Sistema de classificação automática
-- Controle de arbitragem
+- Cadastro completo de pessoas
+- Gestão de 30 times (masculinos e femininos)
+- Controle de 29 torneios brasileiros
+- Registro de partidas com eventos detalhados
+- Sistema de classificação automática via triggers
+- Controle de arbitragem com 4 árbitros por partida
+- Escalações e transferências de jogadores
 
 ## 📊 Principais Funcionalidades
 
-### Consultas Disponíveis
-- Classificação completa de torneios
-- Estatísticas detalhadas de jogadores
-- Histórico completo de partidas
-- Eventos e lances por partida
-- Análise de desempenho de árbitros
-- Artilheiros por campeonato
-- Público médio por estádio
-- Cartões por time
+### Consultas Disponíveis (10 consultas principais)
+- Partidas completas com detalhes de times, árbitros e estádios
+- Gols marcados por time como mandante
+- Jogadores que marcaram gols em partidas (considerando apenas jogadores com contrato ativo)
+- Árbitros que mais apitaram no Brasileiro
+- Estádios que nunca sediaram partidas
+- Artilheiros do Campeonato Brasileiro
+- Estádios com maior público médio
+- Jogadores com mais tempo de clube
+- Classificação atual do Brasileiro Feminino
+- Times com mais cartões recebidos
 
 ### Automações
 - Atualização automática da classificação

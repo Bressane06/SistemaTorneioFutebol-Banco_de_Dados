@@ -18,7 +18,7 @@ Diagrama do modelo relacional implementado.
 - Estrutura física do banco de dados
 - Constraints e tipos de dados
 
-![Diagrama Relacional](SoccerData_ERelacional.png)
+![Diagrama Relacional](SoccerData_ERelacional.jpg)
 
 ### `SoccerData_ERelacional.pgerd`
 Arquivo fonte do diagrama relacional (pgModeler).

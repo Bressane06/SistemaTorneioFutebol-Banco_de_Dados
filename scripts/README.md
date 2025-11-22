@@ -12,9 +12,12 @@ Script de criação das tabelas do banco de dados.
 
 ### `SoccerData_inserts.sql`
 Script com dados de exemplo para popular o banco.
-- Dados de teste para todas as tabelas
-- Cenários realistas de torneios brasileiros
-- Times, jogadores e partidas de exemplo
+- 120 pessoas (jogadores, árbitros, treinadores, comissão)
+- 30 times (20 masculinos, 10 femininos)
+- 30 estádios brasileiros
+- 29 torneios (Brasileiro, estaduais, copas)
+- 25 partidas com eventos e escalações
+- Classificações atualizadas
 
 ### `SoccerData_selects.sql`
 Consultas úteis e relatórios do sistema.
@@ -30,21 +33,21 @@ Funções personalizadas do PostgreSQL.
 
 ### `SoccerData_sp.sql`
 Stored procedures para operações complexas.
-- `CadastrarJogador()`: Cadastro completo de jogador
-- `TransferirJogador()`: Transferência entre times
-- `FinalizarPartida()`: Finalização com atualização automática
+- `CadastrarJogador()`: Cadastro completo de jogador com validações
+- `TransferirJogador()`: Transferência entre times com histórico
+- `FinalizarPartida()`: Finalização com atualização automática da classificação
 
 ### `SoccerData_triggers.sql`
 Triggers para automação e validação.
-- Atualização automática da classificação
-- Validação de vínculos de jogadores
-- Controle de eventos de partida
+- `trg_atualizar_classificacao`: Atualização automática após partidas
+- `trg_impedir_duplo_vinculo`: Impede jogador em múltiplos times
+- `trg_validar_evento_partida`: Valida eventos apenas em partidas ativas
 
 ## 🚀 Ordem de Execução
 
 1. `SoccerData_create.sql` - Criar estrutura
 2. `SoccerData_functions.sql` - Criar funções
-3. `SoccerData_sp.sql` - Criar procedures
-4. `SoccerData_triggers.sql` - Criar triggers
+3. `SoccerData_triggers.sql` - Criar triggers
+4. `SoccerData_sp.sql` - Criar procedures
 5. `SoccerData_inserts.sql` - Popular dados
 6. `SoccerData_selects.sql` - Testar consultas
