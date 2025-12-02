@@ -36,7 +36,6 @@ Sistema de banco de dados para gerenciamento completo de torneios de futebol, in
 ├── relatorioTecnico/           # Relatório técnico detalhado
 │   ├── RelatórioTécnico-GabrielBressane.pdf # Relatório completo
 │   └── README.md               # Guia do relatório
-├── devTest.session.sql         # Sessão de desenvolvimento
 ├── .gitignore                  # Arquivos ignorados pelo Git
 ├── LICENSE                     # Licença do projeto
 └── README.md                   # Este arquivo
